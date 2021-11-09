@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import NotifySrc from '../../images/notify.png';
+
+import StyledNotify from './StyledNotify';
 
 const Container = styled.div`
   display: block;
@@ -9,15 +11,21 @@ const Container = styled.div`
 `;
 
 const StyledImage = styled.img`
-  width: 10%;
+  width: 25%;
   padding-left: 1em;
 `;
 
-export default function StyledAction() {
+function StyledAction(props) {
   return (
     <Container>
-      OUT OF STOCK
-      <StyledImage src={NotifySrc} />
+      SOLD OUT
+      <StyledNotify itemName={props.itemName} />
     </Container>
   );
 }
+
+StyledAction.propTypes = {
+  itemName: PropTypes.string,
+};
+
+export default StyledAction;

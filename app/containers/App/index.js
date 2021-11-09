@@ -21,8 +21,8 @@ export default function App() {
     <div>
       <Switch>
         <Route exact path="/" component={WelcomePage} />
-        <Route exact path="/shop" component={ShopPage} />
-        <Route component={NotFoundPage} />
+        <Route exact path="/info" component={ShopPage} />
+        <Route component={ShopPage} />
       </Switch>
       <GlobalStyle />
     </div>

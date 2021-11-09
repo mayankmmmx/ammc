@@ -7,19 +7,32 @@
  */
 
 import React from 'react';
+import styled from 'styled-components';
 
-import Wrapper from './Wrapper';
 import StyledItem from './StyledItem';
 import StyledAction from './StyledAction';
-import ShirtSrc from '../../images/ammc-tshirt.png';
+import PropTypes from 'prop-types';
 
-function ShopItem() {
+
+const Wrapper = styled.div`
+  width: 100%;
+  font-family: ocr-a-std, monospace;
+`;
+
+
+function ShopItem(props) {
   return (
     <Wrapper>
-      <StyledItem src={ShirtSrc} itemName="ammc tee" />
-      <StyledAction />
+      <StyledItem src={props.src} itemName={props.itemName} />
+      <br />
+      {props.itemDescription}
     </Wrapper>
   );
 }
+
+ShopItem.propTypes = {
+  itemName: PropTypes.string,
+  src: PropTypes.string,
+};
 
 export default ShopItem;

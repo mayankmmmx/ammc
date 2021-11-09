@@ -10,7 +10,7 @@ const Container = styled.div`
 
 const StyledImage = styled.img`
   display: block;
-  width: 20%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
   padding-top: 1em;
