@@ -9,16 +9,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import PropTypes from 'prop-types';
 import StyledItem from './StyledItem';
 import StyledAction from './StyledAction';
-import PropTypes from 'prop-types';
-
 
 const Wrapper = styled.div`
   width: 100%;
   font-family: ocr-a-std, monospace;
 `;
-
 
 function ShopItem(props) {
   return (

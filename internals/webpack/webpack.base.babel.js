@@ -127,6 +127,6 @@ module.exports = options => ({
     child_process: 'empty',
     fs: 'empty',
     net: 'empty',
-    tls: 'empty'
+    tls: 'empty',
   },
 });

@@ -32,7 +32,6 @@ const Logo = styled.img`
   padding-top: 1em;
 `;
 
-
 const Row = styled.div`
   display: flex;
   justify-content: space-around;
@@ -49,19 +48,17 @@ const Col = styled.div`
 const Footer = styled.div`
   display: block;
   width: 100%;
-  text-align:center;
+  text-align: center;
   font-family: ocr-a-std, monospace;
   padding-bottom: 1em;
-`
+`;
 
-
-const description1 = "Rooted in science, but thriving in contradiction."
-const description2 = "Are you a follower?"
-const description3 = "Self explanatory."
-const description4 = "Open your eyes."
-const description5 = "Join the club."
-const description6 = "One of us."
-
+const description1 = 'Rooted in science, but thriving in contradiction.';
+const description2 = 'Are you a follower?';
+const description3 = 'Self explanatory.';
+const description4 = 'Open your eyes.';
+const description5 = 'Join the club.';
+const description6 = 'One of us.';
 
 export default function ShopPage() {
   return (
@@ -69,28 +66,50 @@ export default function ShopPage() {
       <Logo src={LogoSrc} />
       <Row>
         <Col>
-          <ShopItem src={AntiVaxxerAntiMaskerSrc} itemName={"anti-vaxxer anti-masker mask"} itemDescription={description1} />
+          <ShopItem
+            src={AntiVaxxerAntiMaskerSrc}
+            itemName="anti-vaxxer anti-masker mask"
+            itemDescription={description1}
+          />
         </Col>
         <Col>
-          <ShopItem src={Slugs4SaltSrc} itemName={"slugs 4 salt mask"} itemDescription={description2} />
+          <ShopItem
+            src={Slugs4SaltSrc}
+            itemName="slugs 4 salt mask"
+            itemDescription={description2}
+          />
         </Col>
         <Col>
-          <ShopItem src={AntiMaskersOnlySrc} itemName={"anti-maskers only mask"} itemDescription={description3} />
+          <ShopItem
+            src={AntiMaskersOnlySrc}
+            itemName="anti-maskers only mask"
+            itemDescription={description3}
+          />
         </Col>
         <Col>
-          <ShopItem src={GovernmentDroneSrc} itemName={"government drone mask"} itemDescription={description4} />
+          <ShopItem
+            src={GovernmentDroneSrc}
+            itemName="government drone mask"
+            itemDescription={description4}
+          />
         </Col>
         <Col>
-          <ShopItem src={ShirtSrc} itemName={"ammc tee"} itemDescription={description5} />
+          <ShopItem
+            src={ShirtSrc}
+            itemName="ammc tee"
+            itemDescription={description5}
+          />
         </Col>
         <Col>
-          <ShopItem src={AMMCSrc} itemName={"ammc mask"} itemDescription={description6} />
-        </Col> 
+          <ShopItem
+            src={AMMCSrc}
+            itemName="ammc mask"
+            itemDescription={description6}
+          />
+        </Col>
       </Row>
 
-      <Footer>
-        &#169; anti masking masking club, 2021
-      </Footer>
+      <Footer>&#169; anti masking masking club, 2021</Footer>
     </Wrapper>
   );
 }

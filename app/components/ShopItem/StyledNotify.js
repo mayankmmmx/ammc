@@ -60,8 +60,7 @@ const Message = styled.div`
   margin-top: 1em;
 `;
 
-const StyledPopup = styled(Popup)`
-`;
+const StyledPopup = styled(Popup)``;
 
 const StyledNotifyButton = styled.img`
   width: 25%;
@@ -91,8 +90,9 @@ const ButtonsDiv = styled.div`
 `;
 
 const Button = styled.button`
-  color: ${props => props.cancel ? "palevioletred" : "#69e043"};
-  border: ${props => props.cancel ? "2px solid palevioletred" : "2px solid #69e043"};
+  color: ${props => (props.cancel ? 'palevioletred' : '#69e043')};
+  border: ${props =>
+    props.cancel ? '2px solid palevioletred' : '2px solid #69e043'};
   background: #fcfce8;
   font-size: 0.9em;
   border-radius: 3px;
@@ -101,58 +101,70 @@ const Button = styled.button`
   margin-left: 1em;
 
   &:hover {
-    background: ${props => props.cancel ? "palevioletred" : "#69e043"};
+    background: ${props => (props.cancel ? 'palevioletred' : '#69e043')};
     color: #fcfce8;
   }
 `;
 
 function StyledNotify(props) {
-  const [emailTextInput, setEmailTextInput] = useState("");
-  const [emailErrorText, setEmailErrorText] = useState("");
-  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
+  const [emailTextInput, setEmailTextInput] = useState('');
+  const [emailErrorText, setEmailErrorText] = useState('');
+  const validateEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   function test(close) {
     if (validateEmail(emailTextInput)) {
-      appendSpreadsheet({ Email: emailTextInput, Interest: props.itemName, Timestamp: new Date().toLocaleString() });
-      setEmailErrorText("");
-      alert("thanks for submitting your email, we'll be in touch!")
+      appendSpreadsheet({
+        Email: emailTextInput,
+        Interest: props.itemName,
+        Timestamp: new Date().toLocaleString(),
+      });
+      setEmailErrorText('');
+      alert("thanks for submitting your email, we'll be in touch!");
       close();
     } else {
-      console.log("not nice");
-      setEmailErrorText("not nice");
+      console.log('not nice');
+      setEmailErrorText('not nice');
     }
-
   }
 
   return (
-  	<StyledPopup
-    trigger={<StyledNotifyButton src={NotifySrc} />}
-    modal
-    nested
-  	>
+    <StyledPopup trigger={<StyledNotifyButton src={NotifySrc} />} modal nested>
       {close => (
-  		<Container>
-        <Content>
-          <HeaderImage src={ComingSoonSrc} />
-          <Message>unfortunately, we are sold out of the <b>{props.itemName}</b>. Please enter your email so we can notify you for the next drop.</Message>
-          <EmailInput placeholder="your email" value={emailTextInput} onChange={e => setEmailTextInput(e.target.value) } />
-          <ErrorText>{emailErrorText}</ErrorText>
-          <ButtonsDiv>
-            <Button cancel 
-              onClick={ () => {close();} }
-            > cancel 
-            </Button>
-            <Button onClick= { () => {
-              test(close);
-            }
-            }
-            > submit </Button>
-          </ButtonsDiv>
-        </Content> 
-      </Container>
+        <Container>
+          <Content>
+            <HeaderImage src={ComingSoonSrc} />
+            <Message>
+              unfortunately, we are sold out of the <b>{props.itemName}</b>.
+              Please enter your email so we can notify you for the next drop.
+            </Message>
+            <EmailInput
+              placeholder="your email"
+              value={emailTextInput}
+              onChange={e => setEmailTextInput(e.target.value)}
+            />
+            <ErrorText>{emailErrorText}</ErrorText>
+            <ButtonsDiv>
+              <Button
+                cancel 
+                onClick={() => {
+                  close();
+                }}
+              >
+                {' '}
+                cancel
+              </Button>
+              <Button
+                onClick= { () => {
+                  test(close);
+                }
+                }
+                submit{' '}
+              </Button>
+            </ButtonsDiv>
+          </Content>
+        </Container>
       )}
-  	</StyledPopup>
+    </StyledPopup>
   );
 }
 
